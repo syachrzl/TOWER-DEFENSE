@@ -63,15 +63,17 @@ public class Enemy : MonoBehaviour
         _currentHealth -= damage;
         AudioPlayer.Instance.PlaySFX("hit-enemy");
 
+        // kondisi dimana jika current health lebih kecil saama dengan 0
+
         if (_currentHealth <= 0)
         {
-            _currentHealth = 0;
             gameObject.SetActive(false);
             AudioPlayer.Instance.PlaySFX("enemy-die");
         }
+        float healthPercentage = (float)_currentHealth / _maxHealth;
+        _healthFill.size = new Vector2(healthPercentage * _healthBar.size.x, _healthBar.size.y);
+
     }
-
-
 
     // Menandai indeks terakhir pada path
 

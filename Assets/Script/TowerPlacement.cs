@@ -20,7 +20,7 @@ public class TowerPlacement : MonoBehaviour
         {
             tower.SetPlacePosition(transform.position);
             _placedTower = tower;
-        }
+        } 
 
     }
 
